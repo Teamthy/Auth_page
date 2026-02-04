@@ -1,27 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign In | LMS</title>
+
+  <!-- SEO & baseline security -->
+  <meta name="description" content="Sign in to the Learning Management System" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
+
 <body>
-    <h1>Welcome to the Login Page</h1>
-    <form id="loginForm" novalidate>
-  <label for="email">Email</label>
-  <input id="email" name="email" type="email" required />
+  <main class="auth-layout">
+    <section class="auth-card" aria-labelledby="login-heading">
+      <header class="auth-header">
+        <h1 id="login-heading">Welcome back</h1>
+        <p class="auth-subtitle">
+          Sign in to continue to the LMS
+        </p>
+      </header>
 
-  <label for="password">Password</label>
-  <input id="password" name="password" type="password" required />
+      <form id="loginForm" novalidate>
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+          />
+        </div>
 
-  <button type="submit" data-loading-text="Signing in…">
-    Sign in
-  </button>
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+          />
+        </div>
 
-  <p id="formError" role="alert" aria-live="polite"></p>
-</form>
+        <!-- Error feedback -->
+        <p
+          id="formError"
+          class="form-error"
+          role="alert"
+          aria-live="polite"
+        ></p>
 
-<script type="module" src="/js/auth.js"></script>
+        <!-- Submit -->
+        <button
+          type="submit"
+          class="btn btn-primary"
+          data-loading-text="Signing in…"
+        >
+          Sign in
+        </button>
+      </form>
 
+      <footer class="auth-footer">
+        <p>
+          Don’t have an account?
+          <a href="/register.html">Create one</a>
+        </p>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script type="module" src="/js/auth.js"></script>
 </body>
 </html>
